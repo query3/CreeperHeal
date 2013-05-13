@@ -1,5 +1,6 @@
 package com.nitnelave.CreeperHeal.listeners;
 
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -33,6 +34,7 @@ public class CreeperBlockListener implements Listener {
         {
             if (BurntBlockManager.wasRecentlyBurnt (event.getBlock ()))
             {
+                event.getFireBlock ().setType (Material.AIR);
                 event.setCancelled (true);
                 return;
             }
